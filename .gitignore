@@ -1,3 +1,5 @@
 Build/App_Data/TEMP/
 Build/App_Data/Logs/
 Build/App_Data/umbraco.config
+Build/.sass-cache/
+Build/node_modules/

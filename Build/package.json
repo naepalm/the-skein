@@ -1,0 +1,33 @@
+{
+  "name": "the-skein",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-autoprefixer": "^1.0.1",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-imagemin": "^0.8.1",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-favicons": "^0.6.4",
+    "grunt-modernizr": "^0.5.2",
+    "grunt-jsxhint": "^0.4.0",
+    "grunt-react": "^0.10.0",
+    "grunt-svg2png": "^0.2.5",
+    "jsx-loader": "~0.12.2",
+    "object-assign": "~2.0.0",
+    "react": "~0.12.2",
+    "react-tools": "^0.12.1",
+    "reactify": "~0.17.1",
+    "superagent": "~0.21.0",
+    "uglifyjs": "^2.4.10",
+    "unzip": "^0.1.11",
+    "webpack": "~1.5.3"	
+  },
+  "dependencies": {
+    "flux": "~2.0.1",
+    "react-maskedinput": "^2.0.0",
+    "react-router": "^0.11.6",
+    "react-simpletabs": "^0.2.2"
+  }
+}

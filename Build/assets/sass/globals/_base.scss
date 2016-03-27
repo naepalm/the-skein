@@ -1,0 +1,481 @@
+﻿// ----------------------------------------------------------------------
+// GLOBAL STYLES
+// ----------------------------------------------------------------------
+body { 
+    position: relative; 
+    overflow-x: hidden; 
+    font: $global-font;
+    //height: 100%;
+    @include media(48) { 
+        font: 14px/24px $roman, sans-serif;
+    }
+}
+
+h1 { 
+    font-family: $thin, sans-serif;
+    font-size: 4.444444444444444em; 
+    line-height: 1.3em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: .5em;
+    @include media(75){
+        font-size: 3.3333333em;
+    }
+    @include media(48) {
+        font-size: 1.857142857142857em;
+    }
+}
+h2 {
+    font-family: $bold, sans-serif;
+    font-size: 1em; 
+    line-height: 1.3em; 
+    text-transform: uppercase;
+    margin-bottom: .5em;
+}
+h3 { 
+    font-family: $bold, sans-serif;
+    line-height: 1.3em; 
+    margin-bottom: .5em; 
+}
+h4 { 
+    font-family: $thin, sans-serif;
+    font-weight: bold;
+    margin-bottom: .25em;
+    border-top: solid 1px $lightgrey;
+}
+h5 {}
+h6 {}
+p { 
+    margin-bottom: 1em; 
+    //-moz-hyphens: auto; -ms-hyphens: auto; -o-hyphens: auto; -webkit-hyphens: auto; hyphens: auto;
+}
+blockquote {
+    position: relative;
+    font-family: $thin, sans-serif;
+    font-size: 1.6em;
+    line-height: 1.5em;
+    letter-spacing: .05em;
+    color: $blue;
+    padding: 2em;
+    @include media(37.5) {
+        padding: 1em;
+    }
+    cite {
+        font-style: italic;
+    }
+}
+ul {}
+ol {}
+li {}
+strong { 
+    font-weight: bold; 
+}
+em { 
+    font-style: italic;
+}
+u {}
+a {	
+    text-decoration: none; 
+    cursor: pointer;
+    color: $teal;
+    @include transition; 
+    &:active { 
+        outline: none; 
+    }
+    &:hover {
+        outline: none; 
+        text-decoration: none; 
+        color: $lightgrey;
+    }
+}
+button {
+    @include transition;
+}
+
+table { 
+    -moz-hyphens: auto; -ms-hyphens: auto; -webkit-hyphens: auto; hyphens: auto;
+    th, td { padding: 1em; }
+    tbody {
+        tr {
+            &:nth-child(odd)
+            {
+                background: $offwhite;
+            }
+        }
+    }
+}
+
+img {
+    &[style*="left"] { 
+        margin: 0 1em 1em 0;
+    }
+    &[style*="right"] { 
+        margin: 0 0 1em 1em; 
+    }
+}
+
+label {
+    span {
+        display: block;
+    }
+    > span {
+        &:first-child {
+            display: inline-block;
+            font-family: $bold, sans-serif;
+            line-height: 1em;
+            height: 1em;
+        }
+    }
+    > input[type="radio"] { 
+        margin: .25em 1em 0 0; 
+        cursor: pointer; 
+        + span { display: inline-block; 
+            width: calc(100% - 36px); 
+            vertical-align: top; 
+        }
+    }
+    > select {
+        margin-bottom: .5em;
+    }
+    &.required {
+       > span {
+            &:first-child {
+                &::after {
+                    content: '*';
+                    color: $teal;
+                }
+            }
+        }
+    }
+}
+
+.pseudo-label {
+    display: inline-block;
+    font-family: $bold, sans-serif;
+    line-height: 1em;
+    height: 1em;
+}
+
+input {
+    &[type="text"], 
+    &[type="email"], 
+    &[type="password"], 
+    &[type="file"], 
+    &[type="number"], 
+    &[type="tel"], 
+    &[type="month"], 
+    &[type="search"] { 
+        @extend %box-sizing; 
+        padding: .36em; 
+        margin-bottom: .5em;
+        height: auto;
+        &:focus {
+            outline: solid 1px $yellow;
+        }
+    }
+}
+select { 
+    cursor: pointer; 
+    margin-bottom: .5em;
+    padding: .3em 2em .3em .45em;
+    height: auto;
+    @extend %box-sizing;
+    @include media (48) {
+        padding: .25em 2em .25em .45em;
+    }
+    &:focus {
+        outline: solid 1px $yellow;
+    }
+}
+textarea { 
+    padding: .35em; 
+    min-height: 175px; 
+    &:focus {
+        outline: solid 2px $teal;
+    }
+}
+
+::-webkit-input-placeholder {
+    color: $grey;
+}
+
+::-moz-placeholder {
+    color: $grey;
+}
+
+:-ms-input-placeholder {
+    color: $grey;
+}
+
+::placeholder {
+    color: $grey;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.invis { 
+    height: 0; 
+    display: none; 
+    visibility: hidden; 
+    &[type="text"], &[type="password"], &[type="file"], &[type="checkbox"], &[type="radio"] { 
+        @extend .invis; 
+    }
+}
+
+input[type="checkbox"], input[type="radio"] {
+    &:focus {
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+.checkbox, .radiobox { 
+    cursor: pointer;
+    margin-bottom: .5em;
+    span { 
+        position: relative; 
+        display: inline-block; 
+        width: 90%; 
+        vertical-align: middle;
+        text-indent: -1.3em;
+        padding-left: 1.4em;
+        @include transition;
+        &:before {
+            font-family: "icomoon"; 
+            font-size: 1.1em; 
+            width: 20px; 
+            display: inline-block; 
+            vertical-align: middle;
+            margin-right: .25em; 
+            text-indent: 0;
+            @include transition;
+            @include media(27){
+                width: 15px;
+            }
+        }
+    }
+    input[type="checkbox"], input[type="radio"] { 
+        display: none; 
+        &:checked + span {
+            &:before {
+                //color: $black;
+            }
+        }
+    }
+}
+
+.checkbox {
+    span { 
+        &:before { 
+            content: "\f096"; 
+        }
+    }
+    input[type="checkbox"] { 
+        &:checked + span, &:checked ~ .checkbox-label {
+            &:before { 
+                content: "\f046";
+            }
+        }
+    }
+}
+
+.radiobox {
+    span { 
+        &:before { 
+            content: "\f10c"; 
+        }
+    }
+    input[type="radio"] { 
+        &:checked + span {
+            &:before { 
+                content: "\f192";
+            }
+        }
+    }
+}
+
+.input-group {
+    input {
+        margin-bottom: 0;
+        border-right: none;
+    }
+    .supplement {
+        background: transparent;
+        border: solid 1px $lightgrey;
+        color: $black;
+    }
+}
+
+.pull-right { 
+    float: right;
+}
+.row {
+    .no-gutter {
+        > input, select, textarea {
+            &[class*="col-"] {
+                + input, + select, + textarea {
+                    &[class*="col-"] { 
+                        margin-left: -1px; 
+                    }
+                }
+            }
+        }
+    }
+}
+[class*="block-row-"]>* {
+  display: inline-block;
+  float: none;
+  margin-right: -.25em;
+  vertical-align: top;
+}
+.text-right {
+    text-align: right;
+}
+
+.well {
+    padding: 20px;
+    border: solid 1px $lightergrey;
+}
+
+a[role="button"], #content a[role="button"], input[type="submit"], button, .pseudo-button { 
+    display: inline-block;
+    padding: .7em 25px; 
+    text-align: center; 
+    line-height: 1.2em; 
+    color: white; 
+    background: $yellow; 
+    border: none; 
+    text-transform: uppercase;
+    max-width: 100%;
+    @extend %box-sizing; 
+    @include transition;
+    &:hover { 
+        border: none;
+        background: $lightgrey;
+    }
+    &.btn-clear {
+        background: transparent;
+        color: $black;
+        text-transform: lowercase;
+        &:hover {
+            color: $grey;
+        }
+    }
+    &.btn-warning {
+        @include media(37.5) {
+            color: white;
+            background: $error;
+        }
+        &:hover {
+            color: white;
+            background: $error;
+        }
+    }
+}
+
+.pseudo-link {
+    color: $teal;
+    @include transition;
+    &:hover {
+        color: $lightgrey;
+    }
+}
+
+.vcard,
+.adr,
+.street-address,
+.extended-address,
+.country-name,
+.url,
+.tel {
+    display: block;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 2em;
+    h1 {
+        margin-bottom: 0;
+    }
+}
+
+.overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @extend %box-sizing;
+}
+
+.TextPage #primary,
+.SearchResults #content,
+#intro {
+    ul, ol {
+        margin: 0 0 1.25em 20px;
+        padding: 0 0 0 20px;
+    }
+    ul {
+        list-style-type: disc;
+    }
+    ol {
+        margin-left: 25px;
+        list-style-type: decimal;
+    }
+    li {
+        margin: 0 0 .25em 0;
+    }
+}
+
+.figure-list {
+    img {
+        display: inline-block;
+        vertical-align: top;
+        width: 250px;
+        @include media(37.5) {
+            display: inline;
+            float: right;
+            width: 100px;
+            margin-left: 15px;
+            margin-bottom: .25em;
+        }
+    }
+    .info {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(100% - 270px);
+        margin-left: 15px;
+        @include media(37.5) {
+            display: block;
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+}
+
+.pop-up {
+    display: none;
+    #popupToggle:checked ~ & {
+        display: block;
+    }
+}
+
+.social-links {
+    position: fixed;
+    bottom: .66em;
+    right: 1%;
+    z-index: 9;
+    li {
+        display: inline-block;
+        @include media(62){
+            display: block;
+        }
+    }
+    a {
+        font-size: 1.666666666666667em;
+        color: $grey;
+        &:hover {
+            color: $teal;
+        }
+    }
+}
