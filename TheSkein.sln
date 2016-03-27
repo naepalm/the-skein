@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://skein.local", "http://skein.local", "{25A041F6-359A-4B7B-8272-5E131DD17829}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/skein.local"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\..\GitHub\TheSkein\Build\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\skein.local\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/skein.local"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\..\GitHub\TheSkein\Build\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\skein.local\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\..\..\..\GitHub\TheSkein\Build\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheSkein.Web", "..\..\Users\naepa\OneDrive\Documents\Visual Studio 2013\Projects\skein.local\TheSkein.Web\TheSkein.Web.csproj", "{AB505A16-ADE7-45ED-B603-5935322F8C4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25A041F6-359A-4B7B-8272-5E131DD17829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25A041F6-359A-4B7B-8272-5E131DD17829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25A041F6-359A-4B7B-8272-5E131DD17829}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{25A041F6-359A-4B7B-8272-5E131DD17829}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{AB505A16-ADE7-45ED-B603-5935322F8C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB505A16-ADE7-45ED-B603-5935322F8C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB505A16-ADE7-45ED-B603-5935322F8C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB505A16-ADE7-45ED-B603-5935322F8C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
