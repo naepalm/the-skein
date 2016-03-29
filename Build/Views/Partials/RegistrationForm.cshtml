@@ -1,0 +1,42 @@
+﻿@using TheSkein.Web.Controllers
+@using TheSkein.Web.Models
+@model RegistrationForm
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="alert">
+        <h2>You are currently logged in</h2>
+        <p>Do you want to @Html.ActionLink("log out", "Logout", "Authentication") and register as a new user?</p>
+    </div>
+}
+else
+{
+    if (ViewBag.Success != null)
+    {
+        <div class="alert">
+            <p>@ViewBag.Status</p>
+        </div>
+    }
+    else
+    {
+        <div class="alert">@ViewBag.Status</div>
+        using (Html.BeginUmbracoForm<AuthenticationController>("RegisterMember", FormMethod.Post, new RegistrationForm()))
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.FullName, "Full Name")
+                @Html.TextBoxFor(m => m.FullName, new { placeholder = "This is your name, not your character's name.", required = "required" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, "Email")
+                @Html.TextBoxFor(m => m.Email, new { @type = "email", placeholder = "Preferably a gmail address.", required = "required" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password, "Password")
+                @Html.PasswordFor(m => m.Password, new { placeholder = "Minimum of 8 characters", required="required" })
+            </div>
+
+            <div class="controls">
+                <button type="submit">Register Now</button>
+            </div>
+        }
+    }
+}

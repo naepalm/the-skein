@@ -1,4 +1,18 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@using TheSkein.Web.Models
+@inherits UmbracoTemplatePage<LoginPage>
 @{
-	Layout = "BasePage.cshtml";
+	Layout = "Base.cshtml";
+    var status = ViewBag.Status;
 }
+
+<div class="container">
+    <div class="row">
+        <div class="col-l-6 col-m-8 col-s-10 push-l-3 push-m-2 push-s-1">
+            @Html.Partial("LoginForm", new LoginForm { ValidationMessage = status })
+            <div class="row">
+                <a href="@Model.Content.Sibling("registrationPage").Url" class="col-xxs-6">Register Now</a>
+                <a href="@Model.Content.Sibling("forgotPasswordPage").Url" class="col-xxs-6">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+</div>
